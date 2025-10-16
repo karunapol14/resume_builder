@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="assets/logo.png" alt="Resume Builder Logo">
+    <h1>Resume Builder</h1>
+  </header>
+  <nav>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="resume-form.html">Resume Form</a>
+    <a href="resume-preview.html">Resume Preview</a>
+  </nav>
+  <main>
+    <h2>Welcome, Student!</h2>
+    <p>Choose how you want to build your resume:</p>
+    <div style="display: flex; gap: 2em; margin: 2em 0; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 220px; background: #f7fafc; padding: 1.5em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);">
+        <h3>Use Existing Info</h3>
+        <p>Automatically fill your resume using your profile information.</p>
+        <button onclick="window.location.href='resume-preview.html'">Preview Resume</button>
+      </div>
+      <div style="flex: 1; min-width: 220px; background: #f7fafc; padding: 1.5em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);">
+        <h3>Enter New Info</h3>
+        <p>Fill out a form to customize your resume details.</p>
+        <button onclick="window.location.href='resume-form.html'">Go to Form</button>
+      </div>
+    </div>
+    <div style="margin-top: 2em; text-align: center;">
+      <h3>Resume Template Preview</h3>
+      <img src="assets/template-preview.png" alt="Resume Template Preview" style="max-width: 400px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);">
+      <br><br>
+      <button style="font-size:1.2em; padding:0.75em 2em;" onclick="window.location.href='resume-preview.html'">Submit & Generate Resume</button>
+    </div>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>
