@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: resume-backend
+    ports:
+      - "3001:3001"
+    environment:
+      # This pulls the variable from your root .env file
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+    volumes:
+      - ./backend:/app
+      - /app/node_modules # Prevents host node_modules from overriding container's
+    command: npm run dev # Use nodemon for development
+
+  frontend:
+    # A simple nginx container to serve the React application 
+    # (replace this with a proper React build/serve process in a production environment)
+    image: nginx:alpine
+    container_name: resume-frontend
+    ports:
+      - "3000:80"
+    volumes:
+      # Mount the static frontend file directly for quick development access
+      - ./frontend/resume-builder-frontend.jsx:/usr/share/nginx/html/index.html 
+    depends_on:
+      - backend
